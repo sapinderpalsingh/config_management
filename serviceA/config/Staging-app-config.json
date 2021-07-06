@@ -1,0 +1,13 @@
+{
+    "Key1": "Value1",
+    "Key2": "Value2",
+    "Key3": "Value3",
+    "Key4":{
+        "Key4-1":"Value4-1",
+        "Key4-2":"Value4-1"
+    },
+    "LogLevel":"Info",
+    "MongoSettings":{
+        "Database": "Staging-DB"        
+    }
+}

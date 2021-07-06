@@ -1,0 +1,47 @@
+parameters:
+ - name: Label
+   displayName: Label(Environment)
+   type: string
+   default: Development
+   values:
+   - Development
+   - Staging
+ - name: ConfigStoreName
+   displayName: App Configuration Name
+   type: string
+   default: 
+variables:
+  serviceConectionName: <YOUR-SERVICE-CONNECTION-NAME> 
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
+- task: AzureAppConfigurationPush@1
+  inputs:
+    azureSubscription: '${{ variables.serviceConectionName }}'
+    ConfigstoreName: '${{ parameters.ConfigStoreName }}'
+    ConfigurationFile: 'config_management/serviceA/config/${{ parameters.Label }}-app-config.json'
+    Separator: ':'
+    Prefix: 'ServiceA:'
+    Label: '${{ parameters.Label }}'
+    Strict: true
+- task: AzureAppConfigurationPush@1
+  inputs:
+    azureSubscription: '${{ variables.serviceConectionName }}'
+    ConfigstoreName: '${{ parameters.ConfigStoreName }}'
+    ConfigurationFile: 'config_management/serviceA/secretrefs/${{ parameters.Label }}-secretref.json'
+    Separator: ':'
+    Prefix: 'ServiceA:'
+    Label: '${{ parameters.Label }}'
+    ContentType: 'application/vnd.microsoft.appconfig.keyvaultref+json;charset=utf-8'
+    Strict: false
+- task: AzureAppConfigurationPush@1
+  inputs:
+    azureSubscription: '${{ variables.serviceConectionName }}'
+    ConfigstoreName: '${{ parameters.ConfigStoreName }}'
+    ConfigurationFile: 'config_management/serviceA/featureflags/${{ parameters.Label }}-featureflags.json'
+    Separator: ':'
+    Depth: '1'
+    Prefix: '.appconfig.featureflag/'
+    Label: '${{ parameters.Label }}'
+    ContentType: 'application/vnd.microsoft.appconfig.ff+json;charset=utf-8'
+    Strict: true

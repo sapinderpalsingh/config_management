@@ -1,0 +1,13 @@
+{
+    "Key1": "Dev-Value1",
+    "Key2": "Dev-Value2",
+    "Key3": "Dev-Value3",
+    "Key4":{
+        "Key4-1":"Dev-Value4-1",
+        "Key4-2":"Dev-Value4-1"
+    },
+    "LogLevel":"Debug",
+    "MongoSettings":{
+        "Database": "Dev-DB"
+    }
+}

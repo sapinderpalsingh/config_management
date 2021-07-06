@@ -1,0 +1,10 @@
+{
+    "TestFlag": {
+        "id": "TestFlag",
+        "description": "",
+        "enabled": true,
+        "conditions": {
+            "client_filters": []
+        }
+    }
+}
