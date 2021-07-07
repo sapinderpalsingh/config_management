@@ -35,7 +35,8 @@ Notes:-
 2. Create a new [service connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#create-a-service-connection) for your project.
 3. Go to your Azure app configuration and under Access Control (IAM) add role assignment with App Configuration Data Owner permissions for the service connection.
 4. Update the service connection name in ServiceA/pipeline.yaml and ServiceB/pipeline.yaml files.
-5. Create two [deployment pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/clone-import-pipeline?view=azure-devops&tabs=yaml) from ServiceA/pipeline.yaml and ServiceB/pipeline.yaml
+5. Install [Azure App Configuration Push Task](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task-push)
+6. Create two [deployment pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/clone-import-pipeline?view=azure-devops&tabs=yaml) from ServiceA/pipeline.yaml and ServiceB/pipeline.yaml
 
  
 ### Running pipeline
