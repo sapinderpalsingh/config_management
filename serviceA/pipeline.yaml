@@ -19,7 +19,7 @@ steps:
   inputs:
     azureSubscription: '${{ variables.serviceConectionName }}'
     ConfigstoreName: '${{ parameters.ConfigStoreName }}'
-    ConfigurationFile: 'config_management/serviceA/config/${{ parameters.Label }}-app-config.json'
+    ConfigurationFile: 'serviceA/config/${{ parameters.Label }}-app-config.json'
     Separator: ':'
     Prefix: 'ServiceA:'
     Label: '${{ parameters.Label }}'
@@ -28,7 +28,7 @@ steps:
   inputs:
     azureSubscription: '${{ variables.serviceConectionName }}'
     ConfigstoreName: '${{ parameters.ConfigStoreName }}'
-    ConfigurationFile: 'config_management/serviceA/secretrefs/${{ parameters.Label }}-secretref.json'
+    ConfigurationFile: 'serviceA/secretrefs/${{ parameters.Label }}-secretref.json'
     Separator: ':'
     Prefix: 'ServiceA:'
     Label: '${{ parameters.Label }}'
@@ -38,7 +38,7 @@ steps:
   inputs:
     azureSubscription: '${{ variables.serviceConectionName }}'
     ConfigstoreName: '${{ parameters.ConfigStoreName }}'
-    ConfigurationFile: 'config_management/serviceA/featureflags/${{ parameters.Label }}-featureflags.json'
+    ConfigurationFile: 'serviceA/featureflags/${{ parameters.Label }}-featureflags.json'
     Separator: ':'
     Depth: '1'
     Prefix: '.appconfig.featureflag/'
