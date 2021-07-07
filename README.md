@@ -26,7 +26,7 @@ Notes:-
 * Environment name actually represents `Label` in azure app configuration store.
 
 ### Pre-Requisites
-* Azure Subscription(If you don't have one you can create a [free azure subscription](https://azure.microsoft.com/en-in/free/)
+* Azure Subscription(If you don't have one you can create a [free azure subscription](https://azure.microsoft.com/en-in/free/))
 * Azure App Configuration
 * KeyVault
 
